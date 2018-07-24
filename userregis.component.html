@@ -1,0 +1,159 @@
+<div align=center><style>
+    form { width: 400px; }
+    label { float: left; width: 150px; }
+    input[type=text] { float: right; width: 200px; }
+    input[type=email] { float: right; width: 200px; }
+    input[type=password] { float: right; width: 200px; }
+    input[type=date] { float: right; width: 200px; }
+    input[type=time] { float: right; width: 200px; }
+    select { float: right; width: 200px; }
+    .clear { clear: both; height: 0; line-height: 0;}
+    .floatright { float: right; }     
+</style>
+<h1><font color="DarkMagenta"><i>PATIENT'S REGISTRATION</i></font></h1>
+<br>
+<form #formRef='ngForm' (ngSubmit)='onSubmit(formRef.value)' >
+<label><font color="MidnightBlue">  FIRST NAME <sup><font color="red">*</font></sup>:</font> </label>
+       <input type="text" #nameRef='ngModel'required minlength="4" maxlength="20" pattern="^[A-Z a-z]+" name="FIRSTNAME" placeholder="FIRST NAME" ngModel/>
+<div *ngIf='nameRef.errors&&(nameRef.dirty||nameRef.touched||nameRef.valid)'>
+    <div [hidden]='!nameRef.errors.required'> 
+        please enter the name</div>
+    <div [hidden]='!nameRef.errors.minlength'>
+        please enter atleast4 charectors</div>
+    
+    <div [hidden]='!nameRef.errors.pattern'>
+        name doesn't contain numbers</div>
+</div>
+<br>
+<br>
+<label><font color="MidnightBlue">LAST NAME <sup><font color="red">*</font></sup>:</font></label>
+
+<input type="text" #lastnameRef='ngModel'required minlength="4" maxlength="20" pattern="^[A-Z a-z]+" name="LASTNAME" placeholder="LAST NAME" ngModel/>
+<div *ngIf='lastnameRef.errors&&(lastnameRef.dirty||lastnameRef.touched||lastnameRef.valid)'>
+    <div [hidden]='!lastnameRef.errors.required'>please enter the name</div>
+    <div [hidden]='!lastnameRef.errors.minlength'>please enter atleast4 charectors</div>
+    <div [hidden]='!lastnameRef.errors.maxlength'></div>
+    <div [hidden]='!lastnameRef.errors.pattern'>name doesn't contain numbers</div>
+</div> 
+<br>
+<br>
+ <select name="countryCode" id=""style="width: 80px;">
+        <option data-countryCode="GB" value="44" Selected>UK (+44)</option>
+        <option data-countryCode="US" value="1">USA (+1)</option>
+        <optgroup label="Other countries">
+            <option data-countryCode="DZ" value="213">Algeria (+213)</option>
+            <option data-countryCode="AD" value="376">Andorra (+376)</option>
+            <option data-countryCode="AO" value="244">Angola (+244)</option>
+            <option data-countryCode="AI" value="1264">Anguilla (+1264)</option>
+            <option data-countryCode="IN" value="91">India(+91)</option>
+            <option data-countryCode="AR" value="54">Argentina (+54)</option>
+            <option data-countryCode="AM" value="374">Armenia (+374)</option>
+            <option data-countryCode="AW" value="297">Aruba (+297)</option>
+            <option data-countryCode="AU" value="61">Australia (+61)</option>
+            <option data-countryCode="AT" value="43">Austria (+43)</option>
+        </optgroup>
+    </select><label><font color="MidnightBlue">
+       
+ MOBILE NUMBER<sup><font color="red">*</font></sup>:</font></label>   
+           <input type="text" #mobileNumRef='ngModel'required minlength="10" maxlength="11"   pattern="^[7-9]{1}[0-9]{9}$" name="MOBILENUMBER" placeholder="MOBILE NUMBER" ngModel/>
+<div *ngIf='mobileNumRef.errors&&(mobileNumRef.dirty||mobileNumRef.touched||mobileNumRef.valid)'>
+    <div [hidden]='!mobileNumRef.errors.required'>please enter the name</div>
+    <div [hidden]='!mobileNumRef.errors.pattern'>please enter valid number.!</div>
+    <div [hidden]='!mobileNumRef.errors.minlength'>please enter atleast 10 charectors</div>
+    <div [hidden]='!mobileNumRef.errors.maxlength'></div>
+</div>
+<br><br>
+<br>
+<label><font color="MidnightBlue">EMAIL ID <sup><font color="red">*</font></sup>:</font></label>
+
+<input type="email" #emailRef='ngModel' required  minlength="20" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  name="EMAILID" placeholder="EMAIL ID" ngModel/>
+<div *ngIf='emailRef.errors&&(emailRef.dirty||emailRef.touched||emailRef.valid)'>
+    <div [hidden]='!emailRef.errors.required'>please enter the name</div>
+    <div [hidden]='!emailRef.errors.minlength'>please enter atleast 10 charectors</div>
+    <div [hidden]='!emailRef.errors.pattern'>please enter email as pattern</div>
+</div>
+<br><br>
+<br>
+<label><font color="MidnightBlue">DISEASE<sup><font color="red">*</font></sup>:</font></label><select #disRef='ngModel' name="DISEASE" ngModel>
+    <option value=" "></option>
+    <option >heart</option>
+    <option >bones</option>
+    <option >brain</option>
+    <option >pergnency</option>
+    <option >teeth</option>
+    <option >skin</option>
+    <option >nerves</option>
+    </select>
+    <br>   <br>  
+    <label><font color="MidnightBlue">APPOINTMENT DATE<sup><font color="red">*</font></sup>:</font></label> 
+   
+    <div>
+<input type="date" #dRef='ngModel' name="DATE" placeholder=" DATE" ngModel/>  
+ </div>   
+   <br>
+   <br>
+            <div>
+    <input type="time" #tRef='ngModel' name="TIME" placeholder=" TIME" ngModel/>
+</div>
+    <br> 
+    <br> 
+<label><font color="MidnightBlue">AGE <sup><font color="red">*</font></sup>:</font></label>
+    <input type="text"  #ageRef='ngModel' required minlength="1" maxlength="3" pattern="^[1-9]+" name="AGE" placeholder="AGE" ngModel />
+<div *ngIf='ageRef.errors&&(ageRef.dirty||ageRef.touched||ageRef.valid)'>
+        <div [hidden]='!ageRef.errors.required'>please enter the age</div>
+        <div [hidden]='!ageRef.errors.minlength'>please enter atleast 1 charector</div>
+        <div [hidden]='!ageRef.errors.pattern'>please enter age correctly..!</div>
+        <div [hidden]='!ageRef.errors.maxlength'></div>
+</div>
+<br>
+<br>
+
+<label><font color="MidnightBlue">GENDER <sup><font color="red">*</font></sup>:</font> </label>        
+  FEMALE <input type="radio" name="GENDER" value="FEMALE"#mlRef='ngModel'    ngModel/> 
+    MALE <input type="radio" name="GENDER" value="MALE" #femlRef='ngModel'   ngModel/> 
+      OTHERS <input type="radio" name="GENDER" value="OTHERS"#othrRef='ngModel'  ngModel/>  
+<br>
+<br>
+<label><font color="MidnightBlue">USER NAME <sup><font color="red">*</font></sup>: </font></label>
+<input type="text"  #userRef='ngModel'  [(ngModel)]='possible' required minlength="6" maxlength="10" pattern="^[A-Z a-z]+" name="USERNAME" placeholder="USER NAME" (input)='alreadyExists()' ngModel/>
+<div *ngIf='name1'>username is already exist</div>
+<div *ngIf='name2'>username is avilable</div>
+<div *ngIf='userRef.errors&&(userRef.dirty||userRef.touched||userRef.valid)'>
+<div [hidden]='!userRef.errors.required'>please enter the username correctly</div>
+<div [hidden]='!userRef.errors.pattern'>username dosn't have numbers...!</div>
+<div [hidden]='!userRef.errors.minlength'>please enter atleast 6 charectors</div>
+<div [hidden]='!userRef.errors.maxlength'></div>
+</div>
+<br>
+<br>
+<label><font color="MidnightBlue">PASSWORD <sup><font color="red">*</font></sup>: </font> </label>
+<input type="password" #pswdRef='ngModel' required minlength="6" maxlength="11" pattern="^[A-Z]{1}[a-z 1-9]+" [(ngModel)]="password" name="PASSWORD" placeholder="PASSWORD" ngModel/>
+<div *ngIf='pswdRef.errors&&(pswdRef.dirty||pswdRef.touched||pswdRef.valid)'>
+<div [hidden]='!pswdRef.errors.required'>please enter the password</div>
+<div [hidden]='!pswdRef.errors.pattern'> please enter 1st uppercase  last two charectors as numbers  maximum length is 11 </div>
+<div [hidden]='!pswdRef.errors.minlength'>please enter atleast 6 charectors</div>
+<div [hidden]='!pswdRef.errors.maxlength'></div>
+</div> 
+<br>
+<br>
+<div>
+    <label><font color="MidnightBlue">CONFIRM PASSWORD<sup><font color="red">*</font></sup>:</font></label>
+<input type="password"  #cpswdRef='ngModel'  required  [(ngModel)]="confirmpassword" minlength="6"  pattern="^[A-Z]{1}[a-z 1-9]+"  name="CONFIRMPASSWORD" placeholder="CONFIRM PASSWORD"(input)="validPaswd()"  ngModel />
+<div *ngIf='cpswdRef.errors&&(cpswdRef.dirty||cpswdRef.touched||cpswdRef.valid)'>
+<div [hidden]='!cpswdRef.errors.required'> please enter the password</div>
+<div [hidden]='!cpswdRef.errors.pattern'> please enter 1st uppercase  last two charectors as numbers  maximum length is 11</div>
+<div [hidden]='!cpswdRef.errors.minlength'>please enter atleast 6 charectors</div>
+</div>
+<div *ngIf="showpwd">password not matched</div> 
+ 
+</div> 
+<br>
+<br> 
+<!-- <button class="btn btn-success">LOGIN</button> -->
+ <div align="center">
+    <!-- <a routerLink='succesful'> -->
+        <button class="btn btn-success">LOGIN</button>
+</div> 
+<router-outlet></router-outlet>
+</form> 
+</div>

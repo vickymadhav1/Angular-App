@@ -1,0 +1,38 @@
+<div align=center><h1><font color="DarkMagenta " ><i>ADMIN LOGIN</i></font></h1>
+    <br>
+  <form class="form-horizontal" #formRef='ngForm' (ngSubmit)='onSubmit(formRef.value)'>
+  <font color="#0F5A5D"><b>USER NAME</b> <sup><font color="red">*</font></sup></font>:
+  <input type="text" #userRef='ngModel' required minlength="6" maxlength="10" pattern="^[A-Z a-z]+"  name="USER NAME" placeholder="USER NAME" ngModel/><br/><br/>
+  <div *ngIf='userRef.errors&&(userRef.dirty||userRef.touched||userRef.valid)'>
+      <div [hidden]='!userRef.errors.required'>
+          please enter the username
+      </div>
+      <div [hidden]='!userRef.errors.minlength'>
+          please enter atleast 6 charectors
+      </div>
+     
+      <div [hidden]='!userRef.errors.pattern'>
+          username doesn't contains numbers
+      </div>
+  </div>
+  <font color="#0F5A5D "><b>PASSWORD </b><sup><font color="red">*</font></sup>:</font>
+  <input  type="text" #psdRef='ngModel' required minlength="6" maxlength="11" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="PASSWORD" placeholder="PASSWORD"  ngModel/><br/><br/>
+  <div *ngIf='psdRef.errors&&(psdRef.dirty||psdRef.touched||psdRef.valid)'>
+      <div [hidden]='!psdRef.errors.required'>
+          please enter the Password correctly
+      </div>
+      <div [hidden]='!psdRef.errors.minlength'>
+          please enter atleast 6 charectors
+      </div>
+  
+  </div>
+  <a routerLink='admintable'><button [disabled]='formRef.invalid'class="btn btn-success">LOGIN</button></a> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href><font color="#2B0F5D"><b>Forget Password</b></font></a>
+            <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<button [disabled]='formRef.invalid'class="btn btn-primary btn-md">SIGNUP</button>      
+   <button [disabled]='formRef.invalid'class="btn btn-primary">RESET</button> 
+   &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+  
+   <router-outlet></router-outlet>
+  </form>
+  </div>

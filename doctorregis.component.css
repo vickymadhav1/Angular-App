@@ -1,0 +1,21 @@
+
+label
+{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+
+#a {
+        display: inline-block;
+        float: left;
+}
+.button
+{
+  width: 150px;
+  box-align:box-align;
+  max-resolution: 2px auto;
+
+}

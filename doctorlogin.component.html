@@ -1,0 +1,42 @@
+<div align="center"><h1><font color=" DarkMagenta"><i>DOCTOR'S LOGIN</i> </font></h1>
+<br>
+<form #formRef='ngForm' (ngSubmit)='onSubmit(formRef.value)'>
+
+<font color="#105104"><b>USER NAME</b> <sup><font color="red">*</font></sup>:</font>
+
+<input type="text" #userRef='ngModel' [value]="USERNAME" required minlength="6" maxlength="10" pattern="^[A-Z a-z]+" name="USERNAME" placeholder="USER NAME" [(ngModel)]="USERNAME"/><br/><br/>
+<div *ngIf='userRef.errors&&(userRef.dirty||userRef.touched||userRef.valid)'>
+
+<div [hidden]='!userRef.errors.required'>
+     please enter the username
+     </div>
+<div [hidden]='!userRef.errors.minlength'>
+     please enter atleast 6 charectors
+    </div>
+<div [hidden]='!userRef.errors.pattern'> 
+    username dosen't contain numbers
+</div>
+</div>
+<font color="#105104"><b>PASSWORD </b><sup><font color="red">*</font></sup>:</font>
+<input type="password"  #pdRef='ngModel'[value]="PASSWORD" required minlength="6" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="PASSWORD" placeholder="PASSWORD"  [(ngModel)]="PASSWORD"/><br/><br/>
+<div *ngIf='pdRef.errors&&(pdRef.dirty||pdRef.touched||pdRef.valid)'>
+
+<div [hidden]='!pdRef.errors.required'>
+    please enter the Password correctly
+
+</div>
+<div [hidden]='!pdRef.errors.minlength'>
+    please enter atleast 6 charectors
+</div>
+<div [hidden]='!pdRef.errors.pattern'> 
+    please enter 1st uppercase  last two charectors as numbers  maximum length is 11 
+</div>
+</div>
+
+<button [disabled]='formRef.invalid'class="btn btn-success" >LOGIN</button> <br>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<a href><font color="#2B0F5D"><b>ForgetPassword</b></font></a><br>
+  <router-outlet></router-outlet>
+</form>
+</div>
+&nbsp;&nbsp;&nbsp;<button [disabled]='formRef.invalid'class="btn btn-primary">SIGNUP</button>
+&nbsp;&nbsp;&nbsp;<button [disabled]='formRef.invalid'class="btn btn-primary">RESET</button>

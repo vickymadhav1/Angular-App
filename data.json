@@ -1,0 +1,11 @@
+[ 
+{
+  "Sno":1,"patientname":"himabindu","contactnumber":8978787005,"emailid":"karumuri.himabindu@gmail.com","gender":"female","age":21,"disease":"skin","visiteddate":"31-12-17","vistitongtimes":"0"
+},
+{
+  "Sno":2,"patientname":"suryateja","contactnumber":8106510774,"emailid":"suraram.suryateja@gmail.com","gender":"male","age":22,"disease":"teeth","visiteddate":"01-1-18","vistitingtimes":"4"
+},
+{
+  "Sno":3,"patientname":"karthik","contactnumber":8686231514,"emailid":"katamaneni.karthik@gmail.com","gender":"male","age":27,"disease":"heart","visiteddate":"01-12-18","vistitingtimes":"1"
+}
+]

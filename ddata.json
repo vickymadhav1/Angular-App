@@ -1,0 +1,11 @@
+[
+    {
+    "Sno":1,"doctorname":"tejaswi","contactnumber":9985232053,"emailid":"karumoori.tejaswi@gmail.com","gender":"female","age":22,"specialization":"dermitology","appointments":"01-21-18","time":"10am"
+  },
+  {
+    "Sno":2,"doctorname":"srilakshmi","contactnumber":9542445939,"emailid":"karumuri.srilakshmi534@gmail.com","gender":"female","age":49,"specialization":"dentist","appointments":"in pending","time":"-"
+},
+  {
+    "Sno":3,"doctorname":"muralikrishna","contactnumber":9985989065,"emailid":"karumuri.muralikrishna@gmail.com","gender":"male","age":59,"specialization":"cardialogist","appointments":"01-11-18","time":"2pm"
+  }
+]

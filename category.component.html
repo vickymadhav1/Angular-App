@@ -1,0 +1,24 @@
+<div >
+  <table >
+    <tr>
+      <th  (click)="sort('CategoryID')"> CategoryID</th>
+        <th (click)="sort('CategoryName')" >CategoryName</th>
+          <th  (click)="sort('Description')" >Description</th>
+    </tr>
+    <tr *ngFor="let item of  records | search: searchText 
+    | sort: {property: column, direction: direction}">
+      <td>{{item.CategoryID}}</td>
+      <td>{{item.CategoryName}}</td>
+      <td>{{item.Description}}</td>
+    </tr>
+  </table>
+</div>
+
+<div >
+  <div  >
+    <input type="text" [(ngModel)]="searchText" 
+           class="form-control" placeholder="Search By Category" />
+  </div>
+</div>
+
+

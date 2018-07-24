@@ -1,0 +1,36 @@
+
+ <h2><font color="#40632E"><i>USER DETAILS</i></font></h2>
+     <head>
+        <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        </style>
+        </head>
+  <body  style=background:rgb(236,250,157)   class="col-xs-8 col-sm-8 col-md-8 col-lg-8">  
+      
+   <table width=100%>
+         <tr>
+            <!-- <th><font color="#519FCB">Sno</font></th> -->
+             <th><font color="#519FCB">patientname</font></th>
+             <th><font color="#519FCB">contactnumber</font></th>
+              <th><font color="#519FCB">emailid</font></th>
+              <th><font color="#519FCB">gender</font></th>
+              <th><font color="#519FCB">age</font></th>
+              <th><font color="#519FCB">disease</font></th>
+          </tr>
+            <tr *ngFor='let i of test2;'>
+                <!-- <td>{{i.Sno}}</td> -->
+                <td>{{i.FIRSTNAME}}</td> 
+                <td>{{i.MOBILENUMBER}}</td>
+                <td>{{i.EMAILID}}</td>
+                <td>{{i.GENDER}}</td>
+                <td>{{i.AGE}}</td>
+                <td>{{i.DISEASE}}</td><button (click)="deleteData(i.FIRSTNAME)">Delete</button>
+            </tr>
+        </table>
+        <button class="button button2">LOGOUT</button> 
+        <button class="button button2">EDIT</button>
+      </body>
+      
+

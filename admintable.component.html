@@ -1,0 +1,143 @@
+<!-- <button (click)='updateData()'>Data</button>
+  
+ <div *ngIf="addData">
+        <h2><font color="#40632E"><i>ADMIN DETAILS</i></font></h2>
+          </div>
+          <head>
+        <style>
+        table, th, td {
+              border: 1px solid rgba(128, 13, 138, 0.815);
+         }
+        </style>
+        </head>
+<body>
+        <div>   
+      <h4><font color="#AE4AC0">DOCTOR DETAILS</font></h4>
+
+         
+   <table width=100%>
+         <tr>
+             <th (click)="sort('Sno')"><font color="#519FCB">  &nbsp;&nbsp;&nbsp;Sno</font></th>
+             <th (click)="sort('doctorname')"><font color="#519FCB">        &nbsp;&nbsp;&nbsp;doctorname</font></th>
+             <th (click)="sort('contactnumber')"><font color="#519FCB">        &nbsp;&nbsp;&nbsp;contactnumber</font></th>
+              <th (click)="sort('emailid')"><font color="#519FCB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;emailid</font></th>
+              <th (click)="sort('gender')"><font color="#519FCB">        &nbsp;&nbsp;&nbsp;gender</font></th>
+              <th (click)="sort('age')"><font color="#519FCB">&nbsp;&nbsp;&nbsp;age</font></th>
+               <th (click)="sort('specialization')"><font color="#519FCB">        &nbsp;&nbsp;&nbsp;specialization</font></th>
+               <th (click)="sort('appointments')"><font color="#519FCB">        &nbsp;&nbsp;&nbsp;appointments</font></th>
+               <th (click)="sort('time')"><font color="#519FCB">        &nbsp;&nbsp;&nbsp;time</font></th> 
+          </tr>
+            <tr *ngFor="let i of  idno | search: searchText | sort: {property: column, direction: direction}">
+                <td>{{i.Sno}}</td>
+                <td>{{i.doctorname}}</td>
+                <td>{{i.contactnumber}}</td>
+                <td>{{i.emailid}}</td>
+                <td>{{i.gender}}</td>
+                <td>{{i.age}}</td>
+                <td>{{i.specialization}}</td>
+                <td>{{i.appointments}}</td>
+                <td>{{i.time}}</td>
+            </tr>
+        </table>
+        </div>
+    
+      <div>
+        <input type="text" [(ngModel)]="searchText" 
+        class="form-control"  placeholder="Search By doctor name"/> 
+      </div>
+    <div>
+       <h4><font color="#AE4AC0">PATIENT DETAILS</font></h4>
+     
+          <table width=100%>
+                <tr>
+                   <th (click)="sort1('Sno')"><font color="#43184B">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sno</font></th>
+                    <th (click)="sort1('patientname')"><font color="#43184B">&nbsp;&nbsp;&nbsp;patientname</font></th>
+                    <th (click)="sort1('contactnumber')"><font color="#43184B">&nbsp;&nbsp;&nbsp;contactnumber</font></th>
+                     <th (click)="sort1('emailid')"><font color="#43184B">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;emailid</font></th>
+                     <th (click)="sort1('gender')"><font color="#43184B">&nbsp;&nbsp;&nbsp;gender</font></th>
+                     <th (click)="sort1('age')"><font color="#43184B">&nbsp;&nbsp;&nbsp;age </font></th>
+                     <th (click)="sort1('disease')"><font color="#43184B">&nbsp;&nbsp;&nbsp;disease</font></th>
+                     <th (click)="sort1('visiteddate')"><font color="#43184B">&nbsp;&nbsp;&nbsp;visiteddate</font></th>
+                     <th (click)="sort1('vistitingtimes')"><font color="#43184B">&nbsp;&nbsp;&nbsp;vistitingtimes</font></th>
+                 </tr>
+                   <tr *ngFor="let i1 of  id | search1: search1Text   | sort1: {property1: column1, direction1: direction1}">
+                       <td>{{i1.Sno}}</td>
+                       <td>{{i1.patientname}}</td>
+                       <td>{{i1.contactnumber}}</td>
+                       <td>{{i1.emailid}}</td>
+                       <td>{{i1.gender}}</td>
+                       <td>{{i1.age}}</td>
+                       <td>{{i1.disease}}</td>
+                       <td>{{i1.visiteddate}}</td>
+                       <td>{{i1.vistitingtimes}}</td>
+                   </tr>
+               </table>
+        </div>     
+            <div>
+                <input type="text" [(ngModel)]="search1Text" 
+                class="form-control"  placeholder="Search By patient name" />
+              </div>
+            
+       <button class="button button2">LOGOUT</button>
+</body> -->
+
+
+
+
+
+<table border=2>
+  <th>Sno</th>
+  <th>patientname</th>
+  <th>contactnumber</th>
+  <th> &nbsp;&nbsp;&nbsp;&nbsp;emailid</th>
+  <th>gender</th>
+  <th>age</th>
+  <th>disease</th>
+  <th>visiteddate</th>
+  <th>vistitingtimes</th>
+  
+  <tr *ngFor="let i of test;">
+  
+  <td>{{i.Sno}}</td>
+  <td>{{i.patientname}}</td>
+  <td>{{i.contactnumber}}</td>
+  <td>{{i.emailid}}</td>
+  <td>{{i.gender}}</td>
+  <td>{{i.age}}</td>
+  <td>{{i.disease}}</td>
+  <td>{{i.visiteddate}}</td>
+  <td>{{i.vistitingtimes}}</td>
+  
+  </tr>
+  
+</table>
+<br>
+<br>
+
+<table border=2>
+  <th>Sno</th>
+  <th>doctorname</th>
+  <th>contactnumber</th>
+  <th> &nbsp;&nbsp;&nbsp;&nbsp;emailid</th>
+  <th>gender</th>
+  <th>age</th>
+  <th>specialization</th>
+  <th>appointments</th>
+  <th>time</th>
+  
+  <tr *ngFor="let i1 of test1;">
+  
+  <td>{{i1.Sno}}</td>
+  <td>{{i1.doctorname}}</td>
+  <td>{{i1.contactnumber}}</td>
+  <td>{{i1.emailid}}</td>
+  <td>{{i1.gender}}</td>
+  <td>{{i1.age}}</td>
+  <td>{{i1.specialization}}</td>
+  <td>{{i1.appointments}}</td>
+  <td>{{i1.time}}</td>
+  
+  </tr>
+  
+</table>
+

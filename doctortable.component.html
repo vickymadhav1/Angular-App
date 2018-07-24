@@ -1,0 +1,70 @@
+<!-- <button (click)='updateData()'>Data</button>
+<div *ngIf="addData">
+<h2><font color="#40632E"><i>DOCTOR DETAILS</i></font></h2>
+     <head>
+        <style>
+        table, th, td {
+            border: 1px solid black;
+       }
+        </style>
+        </head>
+  <body>
+   <table width=100%>
+         <tr>
+            <th><font color="#519FCB">Sno</font></th>
+             <th><font color="#519FCB">doctorname</font></th>
+             <th><font color="#519FCB">contactnumber</font></th>
+              <th><font color="#519FCB">emailid</font></th>
+              <th><font color="#519FCB">gender</font></th>
+              <th><font color="#519FCB">age</font></th>
+              <th><font color="#519FCB">specialization</font></th>
+          </tr>
+            <tr *ngFor='let i of idno'>
+                <td>{{i.Sno}}</td>
+                <td>{{i.doctorname}}</td>
+                <td>{{i.contactnumber}}</td>
+                <td>{{i.emailid}}</td>
+                <td>{{i.gender}}</td>
+                <td>{{i.age}}</td>
+                <td>{{i.specialization}}</td>
+            </tr>
+        </table>
+      </body>
+<pre class="tab"><button class="button button2">EDIT</button>        <button class="button button2">LOGOUT</button></pre>
+</div>
+ -->
+ 
+ <h2><font color="#40632E"><i>DOCTOR DETAILS</i></font></h2>
+      <head>
+         <style>
+         table, th, td {
+             border: 1px solid black;
+        }
+         </style>
+         </head>
+         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">  
+   <body> 
+         
+ <table border=2>
+    <th>doctorname</th>
+    <th>contactnumber</th>
+    <th> &nbsp;&nbsp;&nbsp;&nbsp;emailid</th>
+    <th>gender</th>
+    <th>age</th>
+    <th>specialization</th>
+    <th>appointments</th>
+
+    <tr *ngFor="let i1 of test1;">
+
+    <td>{{i1.FIRSTNAME}}</td>
+    <td>{{i1.MOBILENUMBER}}</td>
+    <td>{{i1.EMAILID}}</td>
+    <td>{{i1.GENDER}}</td>
+    <td>{{i1.AGE}}</td>
+    <td>{{i1.SPECIALIZATION}}</td>
+    <td>{{i1.APPOINTMENTTIME}}</td><button (click)="deleteData(i1.FIRSTNAME)" >Delete</button>
+    </tr>
+  </table>
+</body>
+<button class="button button2">EDIT</button>   <button class="button button2">LOGOUT</button>
+ </div>
